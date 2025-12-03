@@ -2,20 +2,21 @@
 layout: none
 ---
 <!doctype html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>backend-projects — Portfolio</title>
+  <title>Backend Projects — Portfolio</title>
   <link rel="stylesheet" href="{{ site.baseurl }}/assets/style.css">
-
-  <!-- <link rel="stylesheet" href="/assets/style.css" /> -->
 </head>
+
 <body>
   <header class="site-header">
     <div class="banner">
-      <h1>backend-projects</h1>
-      <p>FastAPI microservices, auth, and utilities</p>
-      <p class="contact"><a href="/">← Home</a></p>
+      <h1>Backend Projects</h1>
+      <p>FastAPI microservices, authentication, CRUD & utilities</p>
+      <p class="contact">
+        <a href="{{ site.baseurl }}/">← Home</a>
+      </p>
     </div>
   </header>
 
@@ -23,20 +24,61 @@ layout: none
     <section>
       <h2>Mini Projects</h2>
 
+      <!-- Project 1 -->
       <article class="card">
-        <h3>FastAPI Authentication</h3>
-        <p>Simple JWT-based authentication for demo APIs.</p>
-        <p class="muted">Tech: Python, FastAPI, PyJWT</p>
-        <p><strong>Latest:</strong> Step 12 — Added JWT Tokens (2025-12-03)</p>
-        <p><a href="/timelines/backend-projects/fastapi-auth.html">View Project</a> • <a href="/posts/fastapi-auth/2025-12-03-step12.html">Latest Entry</a></p>
+        <h3>⭐ FastAPI Authentication System</h3>
+        <p class="muted">Skills: JWT, Hashing, CRUD, SQL</p>
+
+        <ul>
+          <li>Signup / Login</li>
+          <li>JWT token generation</li>
+          <li>Profile update API</li>
+          <li>DB Integration</li>
+        </ul>
+
+        <p><strong>Latest Update:</strong> Step 12 — Added JWT Tokens</p>
+
+        <p>
+          <a href="{{ site.baseurl }}/timelines/backend-projects/fastapi-auth.html">View Timeline</a> •
+          <a href="{{ site.baseurl }}/posts/fastapi-auth/2025-12-03-fastapi-step12.html">Latest Entry</a>
+        </p>
       </article>
 
+      <!-- Project 2 -->
       <article class="card">
-        <h3>CRUD API</h3>
-        <p>CRUD endpoints for resource management.</p>
-        <p class="muted">Tech: FastAPI, SQLAlchemy</p>
-        <p><strong>Latest:</strong> Step 8 — Added CRUD Routes (2025-12-01)</p>
-        <p><a href="/timelines/backend-projects/crud-api.html">View Project</a></p>
+        <h3>⭐ Task Manager API</h3>
+        <p class="muted">Skills: SQLAlchemy, Filtering, Pagination</p>
+
+        <ul>
+          <li>CRUD tasks</li>
+          <li>JWT authentication</li>
+          <li>Search & filter tasks</li>
+          <li>Pagination support</li>
+        </ul>
+
+        <p><strong>Latest Update:</strong> Step 8 — Added CRUD Routes</p>
+
+        <p>
+          <a href="{{ site.baseurl }}/timelines/backend-projects/crud-api.html">View Timeline</a>
+        </p>
+      </article>
+
+      <!-- Project 3 -->
+      <article class="card">
+        <h3>⭐ PDF Summary API</h3>
+        <p class="muted">Skills: File Handling, OpenAI, Text Extraction</p>
+
+        <ul>
+          <li>Upload PDF</li>
+          <li>Extract text</li>
+          <li>Generate summary using AI</li>
+        </ul>
+
+        <p><strong>Latest Update:</strong> Coming soon</p>
+
+        <p>
+          <a href="#">View Timeline</a>
+        </p>
       </article>
 
     </section>
