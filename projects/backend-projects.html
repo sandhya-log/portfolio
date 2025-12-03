@@ -1,17 +1,62 @@
 ---
 layout: default
 ---
-
-
 <!doctype html>
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Test Page</title>
-</head>
-<body>
-  <h1>This page works!</h1>
+  <title>Backend Projects — Portfolio</title>
 
-  <p><a href="{{ site.baseurl }}/">Back Home</a></p>
+  <!-- Correct CSS path for project site -->
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/style.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="banner">
+      <h1>Backend Projects</h1>
+      <p>FastAPI microservices, authentication, CRUD APIs</p>
+
+      <!-- FIXED BACK BUTTON (DO NOT CHANGE) -->
+      <p class="contact">
+        <a href="{{ site.baseurl }}/index.html">← Back Home</a>
+      </p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section>
+      <h2>Mini Projects</h2>
+
+      <!-- Project 1 -->
+      <article class="card">
+        <h3>FastAPI Authentication</h3>
+        <p>Simple JWT-based authentication for demo APIs.</p>
+        <p class="muted">Tech: Python, FastAPI, PyJWT</p>
+
+        <p><strong>Latest:</strong> Step 12 — Added JWT Tokens (2025-12-03)</p>
+
+        <p>
+          <a href="{{ site.baseurl }}/timelines/backend-projects/fastapi-auth.html">View Project</a>
+          •
+          <a href="{{ site.baseurl }}/posts/2025-12-03-fastapi-step12.html">Latest Entry</a>
+        </p>
+      </article>
+
+      <!-- Project 2 -->
+      <article class="card">
+        <h3>CRUD API</h3>
+        <p>CRUD endpoints for resource management.</p>
+        <p class="muted">Tech: FastAPI, SQLAlchemy</p>
+
+        <p><strong>Latest:</strong> Step 8 — Added CRUD Routes (2025-12-01)</p>
+
+        <p>
+          <a href="{{ site.baseurl }}/timelines/backend-projects/crud-api.html">View Project</a>
+        </p>
+      </article>
+
+    </section>
+  </main>
 </body>
 </html>
