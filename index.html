@@ -7,16 +7,19 @@ layout: none
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Your Name — Portfolio</title>
-  <link rel="stylesheet" href="{{ site.baseurl }}/assets/style.css">
 
-  <!-- <link rel="stylesheet" href="/assets/style.css" /> -->
+  <!-- FIXED CSS PATH -->
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/style.css">
 </head>
+
 <body>
   <header class="site-header">
     <div class="banner">
       <h1>Your Name</h1>
       <p>AI Automation • FastAPI • LangChain • RAG</p>
-      <p class="contact">Email: you@example.com — <a href="https://github.com/yourusername">GitHub</a></p>
+      <p class="contact">Email: you@example.com — 
+        <a href="https://github.com/yourusername">GitHub</a>
+      </p>
     </div>
   </header>
 
@@ -25,35 +28,37 @@ layout: none
       <h2>Main Repositories</h2>
 
       <div class="grid">
-        <a class="card" href="/projects/ai-api-projects.html">
+
+        <a class="card" href="{{ site.baseurl }}/projects/ai-api-projects.html">
           <h3>ai-api-projects</h3>
           <p>Small AI API utilities & experiments</p>
         </a>
 
-        <a class="card" href="/projects/backend-projects.html">
+        <a class="card" href="{{ site.baseurl }}/projects/backend-projects.html">
           <h3>backend-projects</h3>
           <p>FastAPI microservices & APIs</p>
         </a>
 
-        <a class="card" href="/projects/automation-projects.html">
+        <a class="card" href="{{ site.baseurl }}/projects/automation-projects.html">
           <h3>automation-projects</h3>
           <p>Automation scripts & pipelines</p>
         </a>
 
-        <a class="card" href="/projects/embeddings-rag.html">
+        <a class="card" href="{{ site.baseurl }}/projects/embeddings-rag.html">
           <h3>embeddings-rag</h3>
           <p>RAG pipelines & vector stores</p>
         </a>
 
-        <a class="card" href="/projects/langchain-projects.html">
+        <a class="card" href="{{ site.baseurl }}/projects/langchain-projects.html">
           <h3>langchain-projects</h3>
           <p>LangChain experiments</p>
         </a>
 
-        <a class="card" href="/projects/master-project.html">
+        <a class="card" href="{{ site.baseurl }}/projects/master-project.html">
           <h3>master-project</h3>
           <p>Main production-sized project</p>
         </a>
+
       </div>
     </section>
   </main>
