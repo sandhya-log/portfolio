@@ -1,4 +1,4 @@
 title: Portfolio
-baseurl: " " # set if your site at username.github.io/repo
+baseurl: "/portfolio " # set if your site at username.github.io/repo
 markdown: kramdown
 permalink: /:title/
