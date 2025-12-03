@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>{{ page.title }}</title>
+  <link rel="stylesheet" href="/assets/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="banner">
+      <h1>{{ page.project | default: "Project" }}</h1>
+      <p><a href="/">← Home</a></p>
+    </div>
+  </header>
+
+  <main class="container">
+    <article class="post">
+      <h2>{{ page.title }}</h2>
+      <p class="muted">Category: {{ page.category }} — Date: {{ page.date | date: "%d %b %Y" }}</p>
+      <div class="content">
+        {{ content }}
+      </div>
+
+      <div class="step-nav">
+        {% assign all = site.posts | where:"project", page.project | sort: "date" %}
+        {% for p in all %}
+          {% if p.url == page.url %}
+            {% assign idx = forloop.index0 %}
+          {% endif %}
+        {% endfor %}
+        <div style="display:flex;justify-content:space-between;margin-top:30px;border-top:1px solid #eee;padding-top:16px">
+          {% if idx > 0 %}
+            {% assign prev = all[idx | minus: 1] %}
+            <a class="nav-btn" href="{{ prev.url }}"><< {{ prev.title }}</a>
+          {% endif %}
+          {% if idx < all.size | minus: 1 %}
+            {% assign next = all[idx | plus: 1] %}
+            <a class="nav-btn" href="{{ next.url }}">{{ next.title }} >></a>
+          {% endif %}
+        </div>
+      </div>
+    </article>
+  </main>
+</body>
+</html>
