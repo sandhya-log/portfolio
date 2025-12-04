@@ -22,31 +22,46 @@ project: fastapi-auth
       </div>
     {% endif %}
 
-
-    <!-- 3. PHASE CIRCLES (example manually defined here) -->
+    <!-- 3. PHASE CIRCLES -->
     <h2>Phases</h2>
 
     <div class="phases">
-      <!-- Phase 1 -->
-      {% assign phase1 = project_posts | where_exp: "post", "post.step >= 1 and post.step <= 5" %}
-{% assign first1 = phase1 | first %}
 
+      <!-- ========= PHASE 1: Steps 1–5 ========== -->
+      {% assign first1 = nil %}
+      {% for post in project_posts %}
+        {% if post.step >= 1 and post.step <= 5 %}
+          {% unless first1 %}
+            {% assign first1 = post %}
+          {% endunless %}
+        {% endif %}
+      {% endfor %}
 
+      {% if first1 %}
       <a class="phase-circle" href="{{ first1.url }}">
         <div class="circle">1</div>
         <div>Initial Setup<br><small>Steps 1–5</small></div>
       </a>
+      {% endif %}
 
-      <!-- Phase 2 -->
-      {% assign phase2 = project_posts | where_exp: "post", "post.step >= 6 and post.step <= 12" %}
-{% assign first2 = phase2 | first %}
+      <!-- ========= PHASE 2: Steps 6–12 ========== -->
+      {% assign first2 = nil %}
+      {% for post in project_posts %}
+        {% if post.step >= 6 and post.step <= 12 %}
+          {% unless first2 %}
+            {% assign first2 = post %}
+          {% endunless %}
+        {% endif %}
+      {% endfor %}
 
+      {% if first2 %}
       <a class="phase-circle" href="{{ first2.url }}">
         <div class="circle">2</div>
         <div>Core Auth<br><small>Steps 6–12</small></div>
       </a>
-    </div>
+      {% endif %}
 
+    </div>
 
     <!-- 4. Recent Steps (automatic) -->
     <h2>Recent Steps</h2>
@@ -62,3 +77,41 @@ project: fastapi-auth
 
   </section>
 </main>
+
+<style>
+/* Quick visuals for circles — move to style.css later */
+.phases {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin: 2rem 0;
+}
+
+.phase-circle {
+  text-decoration: none;
+  text-align: center;
+  color: inherit;
+}
+
+.circle {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #5BC0EB, #6F42C1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+  font-weight: bold;
+  color: white;
+  margin: 0 auto 0.5rem auto;
+  box-shadow: 0px 6px 16px rgba(0,0,0,0.15);
+}
+
+.latest-box {
+  padding: 1rem;
+  background: #f4f4f4;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+</style>
