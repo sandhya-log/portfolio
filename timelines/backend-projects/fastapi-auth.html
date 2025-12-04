@@ -28,16 +28,19 @@ project: fastapi-auth
 
     <div class="phases">
       <!-- Phase 1 -->
-      {% assign phase1 = project_posts | where_exp:"p","p.step >= 1 and p.step <= 5" %}
-      {% assign first1 = phase1 | first %}
+      {% assign phase1 = project_posts | where_exp: "post", "post.step >= 1 and post.step <= 5" %}
+{% assign first1 = phase1 | first %}
+
+
       <a class="phase-circle" href="{{ first1.url }}">
         <div class="circle">1</div>
         <div>Initial Setup<br><small>Steps 1–5</small></div>
       </a>
 
       <!-- Phase 2 -->
-      {% assign phase2 = project_posts | where_exp:"p","p.step >= 6 and p.step <= 12" %}
-      {% assign first2 = phase2 | first %}
+      {% assign phase2 = project_posts | where_exp: "post", "post.step >= 6 and post.step <= 12" %}
+{% assign first2 = phase2 | first %}
+
       <a class="phase-circle" href="{{ first2.url }}">
         <div class="circle">2</div>
         <div>Core Auth<br><small>Steps 6–12</small></div>
