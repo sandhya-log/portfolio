@@ -1,53 +1,61 @@
+---
+layout: default
+title: "FastAPI Authentication Timeline"
+project: fastapi-auth
+---
 
-<!doctype html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <title>FastAPI Auth — Timeline</title>
-  <link rel="stylesheet" href="../../assets/style.css" />
-</head>
-<body>
-  <header class="site-header">
-    <div class="banner">
-      <h1>FastAPI Authentication — Full Build Journey</h1>
-      <p><a href="/projects/backend-projects.html">← Back to backend-projects</a></p>
-    </div>
-  </header>
+<main class="container">
+  <section>
+    <h1>FastAPI Authentication — Project Journey</h1>
 
-  <main class="container">
-    <section>
-      <h2>Category Timeline</h2>
+    <!-- 1. Get all posts for this project -->
+    {% assign project_posts = site.posts | where:"project", page.project | sort:"step" %}
 
-      <div class="timeline">
-        <!-- These are examples; we will automate them with Jekyll when you add posts -->
-        <a class="card" href="/posts/fastapi-auth/2025-11-10-step1.html">
-          <div>Phase: Setup</div>
-          <div class="muted">first entry</div>
-        </a>
-
-        <a class="card" href="/posts/fastapi-auth/2025-11-20-step9.html">
-          <div>Phase: Coding</div>
-          <div class="muted">first coding entry</div>
-        </a>
-
-        <a class="card" href="/posts/fastapi-auth/2025-12-01-step11.html">
-          <div>Phase: Testing</div>
-          <div class="muted">first testing entry</div>
-        </a>
-
-        <a class="card" href="../../_posts/fastapi-auth/2025-12-03-fastapi-step12.md">
-          <div>Phase: Deployment......................................</div>
-          <div class="muted">latest</div>
-        </a>
+    <!-- 2. Latest Update -->
+    {% assign latest = project_posts | last %}
+    {% if latest %}
+      <div class="latest-box">
+        <strong>Latest Step:</strong>
+        Step {{ latest.step }} — {{ latest.title }} ({{ latest.date | date: "%Y-%m-%d" }})
+        &nbsp;•&nbsp;
+        <a href="{{ latest.url }}">Open Latest</a>
       </div>
+    {% endif %}
 
-      <h3>Recent Steps</h3>
-      <ul>
-        <li><a href="/posts/fastapi-auth/2025-12-03-step12.html">Step 12 — Added JWT Tokens</a></li>
-        <li><a href="/posts/fastapi-auth/2025-12-02-step11.html">Step 11 — Password Hashing</a></li>
-        <li><a href="/posts/fastapi-auth/2025-12-02-step10.html">Step 10 — User Model</a></li>
-      </ul>
-    </section>
-  </main>
-</body>
-</html>
+
+    <!-- 3. PHASE CIRCLES (example manually defined here) -->
+    <h2>Phases</h2>
+
+    <div class="phases">
+      <!-- Phase 1 -->
+      {% assign phase1 = project_posts | where_exp:"p","p.step >= 1 and p.step <= 5" %}
+      {% assign first1 = phase1 | first %}
+      <a class="phase-circle" href="{{ first1.url }}">
+        <div class="circle">1</div>
+        <div>Initial Setup<br><small>Steps 1–5</small></div>
+      </a>
+
+      <!-- Phase 2 -->
+      {% assign phase2 = project_posts | where_exp:"p","p.step >= 6 and p.step <= 12" %}
+      {% assign first2 = phase2 | first %}
+      <a class="phase-circle" href="{{ first2.url }}">
+        <div class="circle">2</div>
+        <div>Core Auth<br><small>Steps 6–12</small></div>
+      </a>
+    </div>
+
+
+    <!-- 4. Recent Steps (automatic) -->
+    <h2>Recent Steps</h2>
+    <ul>
+      {% for post in project_posts reversed limit:5 %}
+        <li>
+          <a href="{{ post.url }}">
+            Step {{ post.step }} — {{ post.title }} ({{ post.date | date:"%Y-%m-%d" }})
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+
+  </section>
+</main>
