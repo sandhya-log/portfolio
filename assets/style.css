@@ -1,3 +1,4 @@
+/*****
 :root{
   --bg:#f7fafc;
   --card:#ffffff;
@@ -14,14 +15,15 @@ body{
   width:100%;
   overflow-x:hidden;
 }
-
+  *******/
 /* FULL-WIDTH HEADER ALWAYS */
+/******
 .site-header .banner{
   width:100%;
   background:linear-gradient(90deg,#0ea5e9 0%, #6366f1 100%);
   color:white;
   padding:48px 24px;
-  text-align:center;        /* centered for mobile & desktop */
+  text-align:center;        
 }
 
 .site-header h1{
@@ -33,16 +35,16 @@ body{
 .site-header p{
   margin:6px 0;
 }
-
-/* MAIN CONTENT WRAPPER */
+******/
+/* MAIN CONTENT WRAPPER 
 .container{
   width:100%;
   max-width:1100px;
   margin:28px auto;
   padding:0 20px;
 }
-
-/* PROJECT GRID */
+*/
+/******
 .projects-grid h2{
   margin-bottom:16px;
 }
@@ -53,7 +55,7 @@ body{
   gap:18px;
 }
 
-/* CARD */
+
 .card{
   background:var(--card);
   padding:18px;
@@ -80,7 +82,7 @@ body{
   font-size:14px;
 }
 
-/* FOOTER */
+
 .site-footer{
   padding:20px;
   text-align:center;
@@ -88,7 +90,7 @@ body{
   font-size:13px;
 }
 
-/* 🎯 RESPONSIVE FIXES */
+
 @media(max-width:600px){
   .site-header .banner{
     padding:32px 16px;
@@ -98,70 +100,175 @@ body{
   }
 }
 
-/* --- Projects Section --- */
-.projects-section {
-  max-width: 950px;
-  margin: 40px auto;
-  padding: 10px;
+ */
+
+ :root{
+  --bg:#f7fafc;
+  --card:#ffffff;
+  --accent:#2563eb;
+  --muted:#6b7280;
+  --text:#111827;
+  --shadow:0 6px 18px rgba(17,24,39,0.06);
+  --shadow-hover:0 10px 28px rgba(17,24,39,0.10);
+  --radius:12px;
 }
 
-.section-title {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 25px;
-  text-align: left;
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+  background:var(--bg);
+  color:var(--text);
+  width:100%;
+  overflow-x:hidden;
+  line-height:1.55;
 }
 
-/* --- Project Cards --- */
-.project-card {
-  background: #ffffff;
-  padding: 25px 28px;
-  margin-bottom: 25px;
-  border-radius: 16px;
-  box-shadow: 0 5px 18px rgba(0,0,0,0.06);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+/* FULL-WIDTH HEADER */
+.site-header .banner{
+  width:100%;
+  background:linear-gradient(90deg,#0ea5e9 0%, #6366f1 100%);
+  color:white;
+  padding:48px 24px;
+  text-align:center;
 }
 
-.project-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 8px 22px rgba(0,0,0,0.12);
+.site-header h1{
+  margin:0;
+  font-size:32px;
+  font-weight:700;
 }
 
-.project-title {
-  font-size: 1.4rem;
-  margin-bottom: 8px;
+.site-header p{
+  margin:6px 0;
+  opacity:0.95;
+  font-size:15px;
 }
 
-.project-skills {
-  font-size: 0.95rem;
-  margin-bottom: 10px;
-  color: #444;
+/* MAIN CONTAINER */
+.container{
+  width:100%;
+  max-width:1100px;
+  margin:32px auto;
+  padding:0 20px;
 }
 
-.project-desc {
-  color: #444;
-  margin-bottom: 14px;
-  line-height: 1.6;
+/* SECTION HEADINGS */
+.projects-grid h2{
+  margin-bottom:18px;
+  font-size:24px;
+  font-weight:600;
+  color:#1f2937;
 }
 
-/* --- Features --- */
-.project-features {
-  margin: 12px 0;
-  padding-left: 18px;
+/* PROJECT GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(270px,1fr));
+  gap:20px;
 }
 
-.project-features li {
-  margin-bottom: 6px;
-  font-size: 0.95rem;
+/* CARD */
+.card{
+  background:var(--card);
+  padding:20px 20px 26px;
+  border-radius:var(--radius);
+  text-decoration:none;
+  color:inherit;
+  box-shadow:var(--shadow);
+  border:1px solid rgba(2,6,23,0.05);
+  transition:transform .18s ease, box-shadow .18s ease;
+  position:relative;
 }
 
-/* --- Recruiter Check --- */
-.recruiter-check {
-  margin-top: 15px;
-  font-size: 0.9rem;
-  color: #333;
-  background: #f3f6ff;
-  padding: 10px 12px;
-  border-left: 4px solid #4c6fff;
-  border-radius: 6px;
+.card:hover{
+  transform:translateY(-5px);
+  box-shadow:var(--shadow-hover);
+}
+
+.card h3{
+  margin:0 0 10px 0;
+  font-size:20px;
+  font-weight:600;
+  color:#1e293b;
+}
+
+/* Summary / Description text */
+.card p{
+  margin:0 0 10px 0;
+  color:var(--muted);
+  font-size:14.5px;
+}
+
+/* "Skills" line styling */
+.card .skills{
+  color:#374151;
+  font-size:13px;
+  font-weight:600;
+  margin-bottom:8px;
+}
+
+/* Feature lists inside cards */
+.card ul{
+  margin:6px 0 10px 0;
+  padding-left:18px;
+}
+
+.card ul li{
+  margin-bottom:4px;
+  font-size:14px;
+  color:#4b5563;
+}
+
+/* Recruiter Note Box */
+.card .recruiter-note{
+  background:#eef2ff;
+  border-left:4px solid #6366f1;
+  padding:8px 10px;
+  border-radius:6px;
+  font-size:13px;
+  color:#374151;
+  margin-bottom:10px;
+}
+
+/* Buttons inside card */
+.card a{
+  display:inline-block;
+  background:#e8edff;
+  color:#1e40af;
+  padding:6px 12px;
+  font-size:13px;
+  font-weight:600;
+  border-radius:8px;
+  text-decoration:none;
+  margin-right:10px;
+  margin-top:6px;
+  border:1px solid #cbd5f5;
+  transition:background .15s ease, transform .15s ease;
+}
+
+.card a:hover{
+  background:#d4ddff;
+  transform:translateY(-2px);
+}
+
+/* FOOTER */
+.site-footer{
+  padding:24px;
+  text-align:center;
+  color:var(--muted);
+  font-size:13px;
+}
+
+/* MOBILE FIXES */
+@media(max-width:600px){
+  .site-header .banner{
+    padding:32px 16px;
+  }
+  .site-header h1{
+    font-size:26px;
+  }
+  .card{
+    padding:18px 18px 24px;
+  }
 }
