@@ -1,96 +1,122 @@
-
 <!doctype html>
 <html>
 <head>
   <meta charset="utf-8">
   <title>Backend Projects — Portfolio</title>
 
-  <!-- Correct CSS path for project site -->
+  <!-- Use your existing CSS -->
   <link rel="stylesheet" href="../assets/style.css">
 </head>
 
 <body>
+
+  <!-- HEADER -->
   <header class="site-header">
     <div class="banner">
       <h1>Backend Projects</h1>
-      <p>FastAPI microservices, authentication, CRUD APIs</p>
+      <p>FastAPI · JWT Auth · CRUD APIs · File & Text Processing</p>
 
-      <!-- FIXED BACK BUTTON (DO NOT CHANGE) -->
+      <!-- BACK BUTTON -->
       <p class="contact">
         <a href="../index.html">← Back Home</a>
       </p>
     </div>
   </header>
 
+  <!-- MAIN CONTENT -->
   <main class="container">
-    <section>
-      <h2>Mini Projects</h2>
 
-      <!-- Project 1 -->
-      <article class="card">
-        <h3>FastAPI Authentication</h3>
-        <p>Simple JWT-based authentication for demo APIs.</p>
-        <p class="muted">Tech: Python, FastAPI, PyJWT</p>
+    <section class="projects-grid">
+      <h2>Backend Projects (3)</h2>
 
-        <p><strong>Latest:</strong> Step 12 — Added JWT Tokens (2025-12-03)</p>
+      <div class="grid">
 
-        <p>
-          <a href="../timelines/backend-projects/fastapi-auth.html">View Project</a>
-          
-          <a href="../posts/2025-12-03-fastapi-step12.html">Latest Entry</a>
-        </p>
-      </article>
+        <!-- ⭐ Project 1 -->
+        <article class="card">
+          <h3>FastAPI User Auth System</h3>
 
-      <!-- Project 2 -->
-      <article class="card">
-        <h3>CRUD API</h3>
-        <p>CRUD endpoints for resource management.</p>
-        <p class="muted">Tech: FastAPI, SQLAlchemy</p>
+          <p class="skills"><strong>Skills:</strong> JWT, SQLAlchemy, Hashing, CRUD</p>
 
-        <p><strong>Latest:</strong> Step 8 — Added CRUD Routes (2025-12-01)</p>
+          <p><strong>Summary:</strong><br>
+            A secure authentication backend that supports user signup, login, 
+            JWT token creation, profile updates, and full database integration. 
+            Designed to match real-world SaaS authentication flows.
+          </p>
 
-        <p>
-          <a href="{{ site.baseurl }}/timelines/backend-projects/crud-api.html">View Project</a>
-        </p>
-      </article>
+          <p><strong>Features:</strong></p>
+          <ul>
+            <li>🔐 Signup</li>
+            <li>🔑 Login</li>
+            <li>💠 JWT tokens</li>
+            <li>👤 Profile update</li>
+            <li>🗄 Database integration</li>
+          </ul>
 
-      <!-- Project 3 -->
-<article class="card">
-  <h3>PDF Summary API (AI Automation)</h3>
+          <p><strong>Latest:</strong> Step 12 — JWT Token System Added</p>
 
-  <p class="skills"><strong>Skills:</strong> File Handling, PDF Processing, OpenAI API</p>
+          <p>
+            <a href="#">View Project</a>
+            <a href="#">Latest Entry</a>
+          </p>
+        </article>
 
-  <p><strong>Summary:</strong><br>
-    An AI-powered backend service that accepts a PDF file, extracts text, processes
-    it, and returns a structured summary generated through OpenAI's API. Designed
-    for realistic automation workflows.
-  </p>
+        <!-- ⭐ Project 2 -->
+        <article class="card">
+          <h3>Task Manager API</h3>
 
-  <p><strong>Features:</strong></p>
-  <ul>
-    <li>📤 Upload PDF</li>
-    <li>📄 Extract text from file</li>
-    <li>🤖 Call OpenAI API for summary</li>
-    <li>📦 Return clean JSON summary</li>
-  </ul>
+          <p class="skills"><strong>Skills:</strong> SQLAlchemy, Pagination, Filtering</p>
 
-  <div class="recruiter-note">
-    Recruiters look for: API workflow clarity, file handling, external API use,
-    and clean error management.
-  </div>
+          <p><strong>Summary:</strong><br>
+            A full task management backend with CRUD operations, JWT authentication, 
+            search capability, pagination, and priority-based task filtering.
+          </p>
 
-  <p><strong>Latest:</strong> Coming Soon</p>
+          <p><strong>Features:</strong></p>
+          <ul>
+            <li>📝 CRUD tasks</li>
+            <li>🔐 JWT-based auth</li>
+            <li>🔍 Search tasks</li>
+            <li>📑 Pagination</li>
+            <li>🎚 Priority filters</li>
+          </ul>
 
-  <p>
-    <a href="#">View Project</a>
-  </p>
-</article>
+          <p><strong>Latest:</strong> Step 8 — CRUD Routes Added</p>
 
+          <p>
+            <a href="#">View Project</a>
+          </p>
+        </article>
 
+        <!-- ⭐ Project 3 -->
+        <article class="card">
+          <h3>PDF Summary API</h3>
+
+          <p class="skills"><strong>Skills:</strong> File Handling, AI Processing</p>
+
+          <p><strong>Summary:</strong><br>
+            A backend service that accepts a PDF upload, extracts text, sends it 
+            to an AI model, and returns a clean, structured summary.
+          </p>
+
+          <p><strong>Features:</strong></p>
+          <ul>
+            <li>📤 Upload PDF</li>
+            <li>📄 Text extraction</li>
+            <li>🤖 AI summary generation</li>
+            <li>📦 JSON output summary</li>
+          </ul>
+
+          <p><strong>Latest:</strong> Coming Soon</p>
+
+          <p>
+            <a href="#">View Project</a>
+          </p>
+        </article>
+
+      </div>
     </section>
+
   </main>
+
 </body>
-</html> 
-
-
-
+</html>
