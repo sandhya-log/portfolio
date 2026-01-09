@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>AI API Architecture — Portfolio</title>
+
+  <!-- Use your existing CSS -->
+ <!-- Correct CSS path for GitHub Pages PROJECT SITE -->
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/style.css">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="banner">
+      <h1>AI API Architecture</h1>
+      <p>How the AI projects are designed internally</p>
+
+      <!-- BACK BUTTON -->
+      <p class="contact">
+        <a href="../index.html">← Back Home</a>
+      </p>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="container">
+
+    <section class="projects-grid">
+      <h2>System Architecture</h2>
+
+      <div class="grid">
+
+        <!-- ⭐ Architecture Overview -->
+        <article class="card">
+          <h3>High-Level Design</h3>
+
+          <p><strong>Overview:</strong><br>
+            All AI API projects follow a clean, modular backend architecture designed for
+            scalability, automation, and structured data output.
+          </p>
+
+          <p><strong>Core Layers:</strong></p>
+          <ul>
+            <li>🌐 API Layer – Handles HTTP requests</li>
+            <li>🧠 Service Layer – Business logic & orchestration</li>
+            <li>🤖 AI Layer – Prompting, inference, structured outputs</li>
+            <li>🗄 Data Layer – Logs, metadata, JSON storage</li>
+          </ul>
+        </article>
+
+        <!-- ⭐ Request Flow -->
+        <article class="card">
+          <h3>Request Flow</h3>
+
+          <p><strong>How a request is processed:</strong></p>
+          <ul>
+            <li>1️⃣ Client sends request to API endpoint</li>
+            <li>2️⃣ Input is validated and parsed</li>
+            <li>3️⃣ Business logic executes in service layer</li>
+            <li>4️⃣ AI model is invoked with structured prompts</li>
+            <li>5️⃣ Output is normalized into JSON format</li>
+            <li>6️⃣ Logs and metadata are stored</li>
+            <li>7️⃣ Response is returned to the client</li>
+          </ul>
+        </article>
+
+        <!-- ⭐ AI Layer -->
+        <article class="card">
+          <h3>AI Processing Layer</h3>
+
+          <p><strong>Responsibilities:</strong></p>
+          <ul>
+            <li>🧾 Text summarization and rewriting</li>
+            <li>📧 Email content generation</li>
+            <li>📦 Structured JSON extraction</li>
+            <li>🎯 Prompt templates for consistent outputs</li>
+          </ul>
+
+          <p>
+            The AI layer is isolated from the API routes to ensure clean separation of concerns
+            and easier future upgrades to different models or providers.
+          </p>
+        </article>
+
+        <!-- ⭐ Data & Logging -->
+        <article class="card">
+          <h3>Data & Logging</h3>
+
+          <p><strong>Stored Information:</strong></p>
+          <ul>
+            <li>🗂 Request metadata</li>
+            <li>🧾 Generated outputs</li>
+            <li>📊 Usage logs for monitoring</li>
+          </ul>
+
+          <p>
+            This enables debugging, auditing, and future analytics integration.
+          </p>
+        </article>
+
+        <!-- ⭐ Design Principles -->
+        <article class="card">
+          <h3>Engineering Principles</h3>
+
+          <ul>
+            <li>✔ Separation of concerns</li>
+            <li>✔ Modular, API-first design</li>
+            <li>✔ Structured JSON-based automation</li>
+            <li>✔ Scalable for new AI services</li>
+          </ul>
+
+          <p>
+            This architecture ensures that each AI project can be extended independently
+            without breaking the overall system.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+</body>
+</html>
